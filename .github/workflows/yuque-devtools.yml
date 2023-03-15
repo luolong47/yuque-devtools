@@ -23,60 +23,48 @@ jobs:
           npm install
           yuque-hexo clean 
           yuque-hexo sync 
-          hexo clean 
-          hexo generate
-          cp -rf public ..
           
           cd ../programmingLanguages
           npm install
           yuque-hexo clean
           yuque-hexo sync
-          hexo clean
-          hexo generate
-          cp -rf public ..     
+          cp -rf source ../devtools     
           
           cd ../systemsAndNetworks
           npm install
           yuque-hexo clean
           yuque-hexo sync
-          hexo clean
-          hexo generate
-          cp -rf public ..
+          cp -rf source ../devtools     
                     
           cd ../databasesAndStorage
           npm install
           yuque-hexo clean
           yuque-hexo sync
-          hexo clean
-          hexo generate
-          cp -rf public ..
+          cp -rf source ../devtools     
                               
           cd ../securityAndEncryption
           npm install
           yuque-hexo clean
           yuque-hexo sync
-          hexo clean
-          hexo generate
-          cp -rf public ..
+          cp -rf source ../devtools     
                                         
           cd ../dataAnalysisAndMachineLearning
           npm install
           yuque-hexo clean
           yuque-hexo sync
-          hexo clean
-          hexo generate
-          cp -rf public ..
+          cp -rf source ../devtools     
                                                   
           cd ../designAndUserExperience
           npm install
           yuque-hexo clean
           yuque-hexo sync
-          hexo clean
-          hexo generate
-          cp -rf public ..
+          cp -rf source ../devtools     
           
-          cd ..
-          ls -R public
+          cd ../devtools
+          hexo clean
+          hexo g
+          cp public ..
+          
           echo end
 
       - name: deploy
