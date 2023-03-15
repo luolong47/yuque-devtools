@@ -1,0 +1,32 @@
+name: yuque-devtools
+on: [push, repository_dispatch]
+jobs:
+  deploy:
+    name: Deploy Hexo Public To Pages
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: node
+        users: actions/setup-node@master
+
+      - name: run
+        env:
+          YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN }}
+        run: |
+          npm install hexo-cli -g
+          npm install yuque-hexo -g
+          npm install
+          npm run start
+
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.Github_SSH_PRIVATE_KEY }}
+          external_repository: luolong47/luolong47.github.io
+          publish_branch: master
+          publish_dir: ./public
+          commit_message: ${{ github.event.head_commit.message }}
