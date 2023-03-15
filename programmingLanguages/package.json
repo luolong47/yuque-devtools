@@ -10,7 +10,7 @@
     "start": "yuque-hexo clean && yuque-hexo sync && hexo clean && hexo generate"
   },
   "hexo": {
-    "version": ""
+    "version": "6.3.0"
   },
   "dependencies": {
     "hexo": "^6.3.0",
@@ -27,14 +27,14 @@
     "yuque-hexo": "^1.9.5"
   },
   "yuqueConfig": {
-    "postPath": "source/_posts/devtools",
+    "postPath": "source/_posts/programmingLanguages",
     "cachePath": "tmp/devtools.json",
     "mdNameFormat": "title",
     "adapter": "hexo",
     "concurrency": 5,
     "baseUrl": "https://www.yuque.com/api/v2",
     "login": "ruhun",
-    "repo": "oqvv9b",
+    "repo": "swpngf",
     "onlyPublished": false,
     "onlyPublic": false,
     "lastGeneratePath": "tmp/lastGeneratePath.log",

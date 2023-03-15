@@ -1,5 +1,5 @@
 name: yuque-devtools
-on: [push, repository_dispatch, workflow_dispatch]
+on: [ push, workflow_dispatch ]
 jobs:
   deploy:
     name: Deploy Hexo Public To Pages
@@ -17,10 +17,18 @@ jobs:
         env:
           YUQUE_TOKEN: ${{ secrets.YUQUE_TOKEN }}
         run: |
-          npm install hexo-cli -g
-          npm install yuque-hexo -g
+          pwd
+          cd devtools
           npm install
           npm run start
+          cp -rf public ..
+          ls ../public
+          cd ../programmingLanguages
+          npm install
+          npm run start
+          cp -rf public ..
+          ls ../public
+          echo end
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
