@@ -63,7 +63,7 @@ jobs:
           cd ../devtools
           hexo clean
           hexo g
-          cp public ..
+          cp -rf public ..
           
           echo end
 
