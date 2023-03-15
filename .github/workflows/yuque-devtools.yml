@@ -1,5 +1,5 @@
 name: yuque-devtools
-on: [push, repository_dispatch]
+on: [push, repository_dispatch, workflow_dispatch]
 jobs:
   deploy:
     name: Deploy Hexo Public To Pages
