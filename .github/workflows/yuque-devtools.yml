@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@master
 
       - name: node
-        users: actions/setup-node@master
+        uses: actions/setup-node@master
 
       - name: run
         env:
