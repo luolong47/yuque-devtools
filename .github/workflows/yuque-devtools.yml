@@ -75,7 +75,8 @@ jobs:
           hexo generate
           cp -rf public ..
           
-          
+          cd ..
+          ls -R public
           echo end
 
       - name: deploy
